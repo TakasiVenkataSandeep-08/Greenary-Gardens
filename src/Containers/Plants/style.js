@@ -2,10 +2,8 @@ import {makeStyles} from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
     root: {
     flexGrow: 1,
-    backgroundColor: '#f8f8ff',
+
     marginTop: theme.spacing(2),
-    minHeight: "100vh",
-    overflow:'hidden'
     },
     wrapper: {
       marginTop: theme.spacing(1),

@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
 import Snackbar from '../SnackBar'
 import { Link } from 'react-router-dom'
+import {Link as ALink} from '@material-ui/core'
 import useStyles from './style'
 import { Button, CardMedia, Typography } from '@material-ui/core'
 
@@ -26,6 +27,7 @@ export default function MediaCard({ handleDeteItem,isAdmin, itemDetails,collecti
   const classes = useStyles()
   return (
     <Card className={classes.root}>
+      <ALink style={{textDecoration:"none"}} href={itemDetails.imageUrl} target="_self">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -42,20 +44,21 @@ export default function MediaCard({ handleDeteItem,isAdmin, itemDetails,collecti
             Price: &#8377; {itemDetails.price} {collectionName==="seeds"?' / kg':' / piece'}
           </Typography>
         </CardContent>
-      </CardActionArea>
+      
       <CardActions className={classes.cardBottom}>
-        {!isAdmin ? (<a className={classes.link} href="tel:9989619954"><Typography variant='subtitle1' color='inherit'> Contact us: 9989619954
-                  </Typography></a>) : (<>
-            <Link style={{textDecoration:"none"}} to={`/edit/${collectionName}/${itemDetails.id}`}><Button variant="outlined" size="small" color="primary">
-              Edit
+        {isAdmin && <>
+          <Link style={{ textDecoration: "none" }} to={`/edit/${collectionName}/${itemDetails.id}`}><Button variant="outlined" size="small" color="primary">
+            Edit
         </Button>
-              </Link>
-            <Button onClick={()=>handleDeteItem(itemDetails.id,itemDetails.imageUrl)} variant="outlined" size="small" color="secondary">
-              Delete
+          </Link>
+          <Button onClick={() => handleDeteItem(itemDetails.id, itemDetails.imageUrl)} variant="outlined" size="small" color="secondary">
+            Delete
         </Button>
-            </>
-          )}
-      </CardActions>
+        </>
+        }
+          </CardActions>
+          </CardActionArea>
+        </ALink>
     </Card>
   )
 }
