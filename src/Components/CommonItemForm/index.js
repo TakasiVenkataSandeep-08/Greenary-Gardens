@@ -22,7 +22,6 @@ function Index({
           <form className={classes.form} onSubmit={handleFunction}>
             <Grid container spacing={2}>
                         {formData.map((detail) => {
-                            console.log("name",detail)
                             return <Grid item xs={12} >
                                 <TextField
                                     variant="outlined"

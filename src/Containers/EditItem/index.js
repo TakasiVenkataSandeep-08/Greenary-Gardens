@@ -25,7 +25,6 @@ function Index({
             setLoading(true)
             if (Object.keys(loggedinUser).length !== 0) {
                 const isAdminResponse = await getSingleDocument('users', loggedinUser.id)
-                console.log(isAdminResponse)
                 if (isAdminResponse.isAdmin) {
                     setIsAdmin(true)
                     const itemData = await getSingleDocument(collectionName, id)
@@ -67,7 +66,6 @@ function Index({
     }
 
     const updateEditedDocument = async (data) => {
-        console.log(data)
         setButtonLoading(true)
     if(data.image.length!==0)
     {

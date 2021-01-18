@@ -30,13 +30,11 @@ export default function Index({
             setLoading(true)
             if (Object.keys(loggedinUser).length !== 0) {
                 const isAdminResponse = await getSingleDocument('users', loggedinUser.id)
-                console.log(isAdminResponse)
                 if (isAdminResponse.isAdmin) {
                     setIsAdmin(true)
                 }
             }
                 const response = await getAllDocuments(collectionName)
-                console.log(response)
                 if (mounted) {
                     setFilteredData(response)
                 }

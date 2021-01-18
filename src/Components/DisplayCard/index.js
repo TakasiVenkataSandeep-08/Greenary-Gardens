@@ -23,7 +23,6 @@ export default function MediaCard({ handleDeteItem,isAdmin, itemDetails,collecti
     }
     setSnackBar({ value: false, message: '', type: '' })
   }
-console.log(itemDetails)
   const classes = useStyles()
   return (
     <Card className={classes.root}>

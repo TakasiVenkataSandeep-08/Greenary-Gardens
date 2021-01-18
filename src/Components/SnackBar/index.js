@@ -10,7 +10,6 @@ function index({
   type
 }) {
     const handleCloseSnakeBar = (event, reason) => {
-      console.log("close")
         if (reason === 'clickaway') {
           return false;
         }

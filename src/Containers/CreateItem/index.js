@@ -21,7 +21,6 @@ function Index({
             setLoading(true)
             if (Object.keys(loggedinUser).length !== 0) {
                 const isAdminResponse = await getSingleDocument('users', loggedinUser.id)
-                console.log(isAdminResponse)
                 if (isAdminResponse.isAdmin) {
                     setIsAdmin(true)
                 }

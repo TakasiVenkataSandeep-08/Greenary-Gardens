@@ -34,7 +34,6 @@ export default function Navbar({
           <Hidden only={['sm', 'xs']}>
             {navbarDetails.map((detail, index) => {
               if (!detail.isButton) {
-               console.log(index)
                 return (<><Link
                   key={index}
                   to={detail.to}
@@ -51,7 +50,6 @@ export default function Navbar({
               }
               
               else {
-                console.log(index)
                 return (
                   <Link
                   key={index}
